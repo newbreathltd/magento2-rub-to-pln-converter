@@ -1,0 +1,37 @@
+<form data-newbreath_currency_converter="rub|pln">
+<h2 class='title'><?php echo $block->getData('title'); ?></h2>
+<label>RUB: <input type="text" required="true" name="from" data-validate='{"required":true,"digital":true}' value='123,45' /></label><br />
+<input type="submit" value="<?php echo __("Convert"); ?>" /><br />
+<label style='display:none;' class='output'>PLN: <input type="text" name="to" readonly="readonly" /></label>
+</form>
+
+
+<script>
+require(
+    [
+        'jquery'
+    ],
+    function(
+        $
+    ) {
+
+		$("form[data-newbreath_currency_converter='rub|pln'] input[name='from']").on("keypress keyup blur",function (e) {
+	     	$(this).val($(this).val().replace(/[^0-9\,\.]/g,'').replace(/[\.]/g,','));
+            if ((!(e.which == 44 || e.which == 46) || $(this).val().indexOf(',') != -1) && (e.which < 48 || e.which > 57)) {
+                e.preventDefault();
+            }
+	    });
+
+        $("form[data-newbreath_currency_converter='rub|pln']").each(function() {
+        	$(this).submit(function (e) {
+        		var $formEl = $(this);
+        		e.preventDefault();
+        		$.post("/nbp",{amount:$("input[name='from']",$formEl).val().replace(",",".")},function(resultData) {
+        			$(".output",$formEl).show();
+        			$("input[name='to']",$formEl).val(new String(resultData.amount).replace(".",","));
+        		},'json');
+        	});
+        });
+    }
+);
+</script>

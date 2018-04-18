@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:nbp:Magento_Widget:etc/widget.xsd">
+	<widget class="Newbreath\Nbp\Block\Widget\Form" id="newbreat_nbp_widget">
+		<label>Form Currency Converter</label>
+		<description>Currency Converter</description>
+		<parameters>
+			<parameter name="title" sort_order="10" visible="true" xsi:type="text">
+				<label>Custom Form Title</label>
+			</parameter>
+		</parameters>
+	</widget>
+</widgets>
