@@ -6,5 +6,8 @@
             "email": "arek@newbreath.co.uk"
         }
     ],
+    "source": {
+    	"url": "git://github.com/newbreathltd/magento2-rub-to-pln-converter.git",
+    },
     "require": {}
 }
