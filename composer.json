@@ -1,0 +1,10 @@
+{
+    "name": "newbreath/nbp",
+    "authors": [
+        {
+            "name": "Arkadiusz Bartnik",
+            "email": "arek@newbreath.co.uk"
+        }
+    ],
+    "require": {}
+}
