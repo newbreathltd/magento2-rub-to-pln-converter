@@ -7,7 +7,9 @@
         }
     ],
     "source": {
-    	"url": "git://github.com/newbreathltd/magento2-rub-to-pln-converter.git"
+    	"type":"git",
+    	"url": "https://github.com/newbreathltd/magento2-rub-to-pln-converter",
+    	"reference": "master"
     },
     "require": {}
 }
